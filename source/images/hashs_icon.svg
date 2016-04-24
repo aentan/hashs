@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.1 (28215) - http://www.bohemiancoding.com/sketch -->
+    <title>_Assets/hashs_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="_Assets/hashs_icon" transform="translate(-18.000000, -18.000000)" stroke-width="6">
+            <g id="Group-3" transform="translate(21.635220, 21.635220)">
+                <path d="M6,0.251572327 L6,12.327044" id="Stroke-3" stroke="#B3A4FF"></path>
+                <path d="M12.327044,6 L0.251572327,6" id="Stroke-4" stroke="#B3A4FF"></path>
+                <path d="M30,0.251572327 L30,12.327044" id="Stroke-5" stroke="#50E3C2"></path>
+                <path d="M36.4779874,6 L24.4025157,6" id="Stroke-6" stroke="#50E3C2"></path>
+                <path d="M30,24.4025157 L30,36.4779874" id="Stroke-7" stroke="#50E3C2"></path>
+                <path d="M6,24.4025157 L6,36.4779874" id="Stroke-8" stroke="#50E3C2"></path>
+                <path d="M36.4717987,27.4985912 C25.6748176,35.3431195 11.0544403,35.3431195 0.257459119,27.4985912" id="Stroke-9" stroke="#50E3C2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

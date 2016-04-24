@@ -2,8 +2,19 @@
 # Compass
 ###
 
-# Susy grids in Compass
-require 'susy'
+class Scut < Middleman::Extension
+  def initialize(app, options_hash={}, &block)
+    super
+    app.compass_config do |config|
+      config.require "scut"
+      config.require "breakpoint"
+    end
+  end
+end
+
+::Middleman::Extensions.register(:scut, Scut)
+
+activate :scut
 
 # Change Compass configuration
 # compass_config do |config|

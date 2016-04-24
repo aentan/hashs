@@ -1,0 +1,287 @@
+//
+// Main Stylesheet
+//
+
+@import "compass";
+@import "h5bp";
+@import "scut";
+@import "breakpoint";
+
+// HTML5 Boilerplate Styles
+@include h5bp-normalize;
+@include h5bp-base-styles;
+
+
+// Breakpoints
+
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
+
+
+// Colors
+
+$brand-primary: #b3a4ff;
+$brand-secondary: #50e3c2;
+$bg-hero: #e2fff9;
+$bg-body: #f4f4f4;
+$bg-main: #fff;
+
+$text-primary: rgba(0, 0, 0, .87);
+$text-secondary: rgba(0, 0, 0, .54);
+$text-hint: rgba(0, 0, 0, .38);
+$divider: rgba(0, 0, 0, .12);
+
+
+// Typography
+
+body {
+  color: $text-primary;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+// Layout
+
+html {
+  background-color: $bg-body;
+}
+
+html,
+body {
+  @include breakpoint($screen-lg-min) {
+    height: 100%;
+  }
+}
+
+.container {
+  @include scut-center-block;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  @include breakpoint($screen-sm-min) {
+    width: $screen-sm-min;
+  }
+  @include breakpoint($screen-lg-min) {
+    @include scut-center-transform;
+    max-width: 648px;
+  }
+}
+
+.content {
+  @include breakpoint($screen-sm-min) {
+    float: left;
+    width: 66.7%;
+  }
+}
+
+.brand .icon,
+.brand h1,
+.apple,
+.download,
+.subscribe {
+  height: 112px;
+  @include breakpoint($screen-sm-min) {
+    height: 216px;
+  }
+  @include breakpoint($screen-md-min) {
+    height: 160px;
+  }
+}
+
+.hero {
+  height: 400px;
+  @include breakpoint($screen-sm-min) {
+    height: 432px;
+  }
+  @include breakpoint($screen-md-min) {
+    height: 320px;
+  }
+}
+
+.brand {
+  @include scut-clearfix;
+  background-color: $bg-main;
+  .icon {
+    background: image-url("hashs_icon.svg") no-repeat 50% 50%;
+    display: block;
+    float: left;
+    width: 33.33%;
+    @include breakpoint($screen-sm-min) {
+      width: 50%;
+      line-height: 216px;
+    }
+    @include breakpoint($screen-sm-min) {
+      line-height: 160px;
+    }
+  }
+  h1 {
+    @include scut-rem-fallback(28);
+    background-color: $brand-primary;
+    color: white;
+    float: left;
+    font: -apple-system-headline;
+    font-weight: 400;
+    line-height: 112px;
+    margin: 0;
+    text-align: center;
+    width: 66.67%;
+    @include breakpoint($screen-sm-min) {
+      width: 50%;
+      line-height: 216px;
+    }
+    @include breakpoint($screen-sm-min) {
+      line-height: 160px;
+    }
+  }
+}
+
+.hero {
+  background-color: $bg-hero;
+  overflow: hidden;
+  text-align: center;
+  h2 {
+    @include scut-margin(32px n);
+    @include scut-rem-fallback(24);
+    color: $brand-primary;
+    font: -apple-system-headline;
+    font-weight: 300;
+    @include breakpoint($screen-sm-min) {
+      @include scut-margin(0);
+    }
+  }
+  img {
+    @include scut-center-block;
+    width: 56%;
+    @include breakpoint($screen-sm-min) {
+      bottom: -12px;
+      clip-path: inset(0 0 12px 0);
+      -webkit-clip-path: inset(0 0 12px 0);
+      position: absolute;
+      right: -40px;
+      width: 56%;
+    }
+    @include breakpoint($screen-lg-min) {
+      bottom: -64px;
+      clip-path: inset(0 0 64px 0);
+      -webkit-clip-path: inset(0 0 64px 0);
+      position: absolute;
+      right: -32px;
+      width: 58%;
+    }
+  }
+  @include breakpoint($screen-sm-min) {
+    clear: left;
+    overflow: visible;
+    position: relative;
+    z-index: 100;
+  }
+}
+
+.get {
+  @include scut-clearfix;
+  .apple {
+    background: $brand-secondary image-url("apple_icon.svg") no-repeat 50% 50%;
+    display: block;
+    float: left;
+    width: 33.33%;
+    @include breakpoint($screen-sm-min) {
+      width: 100%;
+    }
+  }
+  .download {
+    @include scut-rem-fallback(18);
+    background-color: $brand-secondary;
+    color: white;
+    float: left;
+    font: -apple-system-headline;
+    font-weight: 200;
+    position: relative;
+    text-align: center;
+    width: 66.67%;
+    span {
+      @include scut-center-transform;
+    }
+    @include breakpoint($screen-sm-min) {
+      width: 100%;
+    }
+  }
+  @include breakpoint($screen-sm-min) {
+    float: left;
+    width: 33.3%;
+  }
+}
+
+.subscribe {
+  @include scut-clearfix;
+  background-color: white;
+  input[type="text"] {
+    @include scut-padding(24px 24px 16px);
+    @include scut-rem-fallback(17);
+    border: 0;
+    box-sizing: border-box;
+    outline: none;
+    -webkit-appearance: none;
+    width: 100%;
+  }
+  button {
+    @include scut-margin(0 16px 16px);
+    @include scut-padding(9px 12px);
+    @include scut-rem-fallback(14);
+    @include scut-border(2px solid $brand-secondary, y y);
+    background-color: $brand-secondary;
+    border-radius: 8px;
+    color: white;
+    float: right;
+    font-weight: 500;
+    line-height: 1;
+    -webkit-appearance: none;
+    &[disabled] {
+      @include scut-border(2px solid $text-hint, y y);
+      background-color: white;
+      color: $text-secondary;
+      opacity: 0.5;
+    }
+  }
+  @include breakpoint($screen-sm-min) {
+    float: left;
+    width: 33.3%;
+  }
+}
+
+footer {
+  @include scut-clearfix;
+  @include scut-padding(32px);
+  color: $text-hint;
+  text-align: center;
+  p {
+    @include scut-margin(0);
+  }
+  ul {
+    @include scut-list-inline;
+    @include scut-margin(0 0 32px);
+  }
+  @include breakpoint($screen-sm-min) {
+    clear: left;
+  }
+}
+
+[class^="soc"] {
+  @include scut-rem-fallback(14);
+  @include scut-image-replace;
+  @include scut-margin(0 12px);
+  @include scut-size(24px 24px);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.soc1 { background-image: image-url("facebook_icon.svg"); }
+.soc2 { background-image: image-url("twitter_icon.svg"); }
+.soc3 { background-image: image-url("instagram_icon.svg"); }
