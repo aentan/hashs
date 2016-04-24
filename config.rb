@@ -109,16 +109,16 @@ configure :build do
   #   :favicon_maker_base_image => "favicon_base.svg"
 
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
-  # activate :cache_buster
+  activate :cache_buster
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
@@ -129,17 +129,14 @@ configure :build do
   # set :http_path, "/Content/images/"
 end
 
-# Requires middleman-deploy and rsync
-# activate :deploy do |deploy|
-#   deploy.method = :rsync
-#   deploy.user   = "example"
-#   deploy.host   = "www.example.com"
-#   deploy.path   = "/public_html"
-#   # Optional Settings
-#   deploy.port  = 22 # ssh port, default: 22
-#   deploy.clean = true # remove orphaned files on remote host, default: false
-#   deploy.build_before = true # default: false
-# end
+activate :deploy do |deploy|
+  deploy.method = :git
+  # Optional Settings
+  # deploy.remote   = "custom-remote" # remote name or git url, default: origin
+  # deploy.branch   = "custom-branch" # default: gh-pages
+  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+  deploy.build_before = true # default: false
+end
 
 # Skip locale validation (and validation warnings)
 I18n.enforce_available_locales = false

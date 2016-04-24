@@ -82,7 +82,7 @@ body {
 }
 
 .brand .icon,
-.brand h1,
+.brand .name,
 .apple,
 .download,
 .subscribe {
@@ -90,17 +90,20 @@ body {
   @include breakpoint($screen-sm-min) {
     height: 216px;
   }
-  @include breakpoint($screen-md-min) {
+  @include breakpoint($screen-lg-min) {
     height: 160px;
   }
 }
 
 .hero {
   height: 400px;
+  @include breakpoint($screen-xs-min) {
+    height: 544px;
+  }
   @include breakpoint($screen-sm-min) {
     height: 432px;
   }
-  @include breakpoint($screen-md-min) {
+  @include breakpoint($screen-lg-min) {
     height: 320px;
   }
 }
@@ -115,29 +118,24 @@ body {
     width: 33.33%;
     @include breakpoint($screen-sm-min) {
       width: 50%;
-      line-height: 216px;
-    }
-    @include breakpoint($screen-sm-min) {
-      line-height: 160px;
     }
   }
-  h1 {
-    @include scut-rem-fallback(28);
+  .name {
     background-color: $brand-primary;
     color: white;
     float: left;
-    font: -apple-system-headline;
-    font-weight: 400;
-    line-height: 112px;
-    margin: 0;
-    text-align: center;
+    position: relative;
     width: 66.67%;
-    @include breakpoint($screen-sm-min) {
-      width: 50%;
-      line-height: 216px;
+    h1 {
+      @include scut-center-transform;
+      @include scut-rem-fallback(28);
+      font: -apple-system-headline;
+      font-weight: 400;
+      margin: 0;
+      text-align: center;
     }
     @include breakpoint($screen-sm-min) {
-      line-height: 160px;
+      width: 50%;
     }
   }
 }
@@ -154,11 +152,18 @@ body {
     font-weight: 300;
     @include breakpoint($screen-sm-min) {
       @include scut-margin(0);
+      left: 32px;
+      position: relative;
+      text-align: left;
+      top: 64px;
     }
   }
   img {
     @include scut-center-block;
     width: 56%;
+    @include breakpoint($screen-xs-min) {
+      width: 40%;
+    }
     @include breakpoint($screen-sm-min) {
       bottom: -12px;
       clip-path: inset(0 0 12px 0);
@@ -173,7 +178,6 @@ body {
       -webkit-clip-path: inset(0 0 64px 0);
       position: absolute;
       right: -32px;
-      width: 58%;
     }
   }
   @include breakpoint($screen-sm-min) {
@@ -221,6 +225,7 @@ body {
 .subscribe {
   @include scut-clearfix;
   background-color: white;
+  position: relative;
   input[type="text"] {
     @include scut-padding(24px 24px 16px);
     @include scut-rem-fallback(17);
@@ -231,7 +236,7 @@ body {
     width: 100%;
   }
   button {
-    @include scut-margin(0 16px 16px);
+    @include scut-coords(n 16px 16px n);
     @include scut-padding(9px 12px);
     @include scut-rem-fallback(14);
     @include scut-border(2px solid $brand-secondary, y y);
@@ -241,6 +246,7 @@ body {
     float: right;
     font-weight: 500;
     line-height: 1;
+    position: absolute;
     -webkit-appearance: none;
     &[disabled] {
       @include scut-border(2px solid $text-hint, y y);
@@ -262,13 +268,23 @@ footer {
   text-align: center;
   p {
     @include scut-margin(0);
+    @include breakpoint($screen-sm-min) {
+      float: right;
+    }
   }
   ul {
     @include scut-list-inline;
     @include scut-margin(0 0 32px);
+    @include breakpoint($screen-sm-min) {
+      float: left;
+    }
   }
   @include breakpoint($screen-sm-min) {
+    @include scut-padding(24px);
     clear: left;
+  }
+  @include breakpoint($screen-lg-min) {
+    @include scut-padding(24px 0);
   }
 }
 
