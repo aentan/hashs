@@ -17,6 +17,6 @@ bodyclass: home
     %span= "coming soon to the app store"
 
 .subscribe
-  %form
-    %input{type: "text", placeholder: "your email address"}
-    %button{type: "submit", disabled: true} notify me
+  %form#subForm{action: "http://aen.createsend.com/t/r/s/hydltld/", method: "post"}
+    %input#fieldEmail{name: "cm-hydltld-hydltld", required: "", type: "email", placeholder: "your email address"}/
+    %button{type: "submit"} notify me

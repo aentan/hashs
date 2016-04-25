@@ -211,6 +211,9 @@ body {
     width: 66.67%;
     span {
       @include scut-center-transform;
+      @include scut-padding(0 32px);
+      box-sizing: border-box;
+      width: 100%;
     }
     @include breakpoint($screen-sm-min) {
       width: 100%;
@@ -226,7 +229,8 @@ body {
   @include scut-clearfix;
   background-color: white;
   position: relative;
-  input[type="text"] {
+  input[type="text"],
+  input[type="email"] {
     @include scut-padding(24px 24px 16px);
     @include scut-rem-fallback(17);
     border: 0;
