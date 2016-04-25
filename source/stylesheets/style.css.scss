@@ -152,7 +152,7 @@ body {
   text-align: center;
   h2 {
     @include scut-margin(32px n);
-    @include scut-rem-fallback(24);
+    @include scut-rem-fallback(28);
     color: $brand-primary;
     font: -apple-system-headline;
     font-weight: 300;
@@ -162,6 +162,9 @@ body {
       position: relative;
       text-align: left;
       top: 64px;
+    }
+    @include breakpoint($screen-md-min) {
+      @include scut-rem-fallback(24);
     }
   }
   img {
@@ -280,6 +283,7 @@ footer {
   text-align: center;
   p {
     @include scut-margin(0);
+    @include scut-rem-fallback(14);
     @include breakpoint($screen-sm-min) {
       float: right;
     }
