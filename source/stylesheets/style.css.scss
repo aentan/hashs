@@ -61,6 +61,7 @@ body {
 
 .container {
   @include scut-center-block;
+  overflow: hidden;
   img {
     max-width: 100%;
     height: auto;
@@ -72,6 +73,11 @@ body {
     @include scut-center-transform;
     max-width: 648px;
   }
+}
+
+#main {
+  @include scut-clearfix;
+  overflow: hidden;
 }
 
 .content {
@@ -166,16 +172,12 @@ body {
     }
     @include breakpoint($screen-sm-min) {
       bottom: -12px;
-      clip-path: inset(0 0 12px 0);
-      -webkit-clip-path: inset(0 0 12px 0);
       position: absolute;
       right: -40px;
       width: 56%;
     }
     @include breakpoint($screen-lg-min) {
       bottom: -64px;
-      clip-path: inset(0 0 64px 0);
-      -webkit-clip-path: inset(0 0 64px 0);
       position: absolute;
       right: -32px;
     }
@@ -214,6 +216,12 @@ body {
       @include scut-padding(0 32px);
       box-sizing: border-box;
       width: 100%;
+      @include breakpoint($screen-xs-min) {
+        @include scut-padding(0 56px);
+      }
+      @include breakpoint($screen-lg-min) {
+        @include scut-padding(0 32px);
+      }
     }
     @include breakpoint($screen-sm-min) {
       width: 100%;
