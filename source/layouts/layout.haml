@@ -12,12 +12,9 @@
     -# Pull in the page title
     %title= current_page.data.title
 
-    %meta{:name => "description", :content => ""}
-    %meta{:name => "author", :content => ""}
-    -# You may wish to remove the 'initial scale=1.0' for non-responsive layouts
+    %meta{:name => "description", :content => current_page.data.desc}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-
-    -# Place favicon.ico and apple-touch-icon(s) in the root directory
+    %link{:rel => "icon", :href => "/favicon.ico", :type => "image/x-icon"}
 
     = stylesheet_link_tag "style"
     = javascript_include_tag "libs/modernizr-2.7.1.min"
