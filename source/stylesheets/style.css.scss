@@ -111,7 +111,7 @@ body {
 }
 
 .hero {
-  height: 400px;
+  height: 544px;
   @include breakpoint($screen-xs-min) {
     height: 544px;
   }
@@ -156,21 +156,34 @@ body {
   background-color: $bg-hero;
   overflow: hidden;
   text-align: center;
-  h2 {
-    @include scut-margin(32px n);
-    @include scut-rem-fallback(28);
-    color: $brand-primary;
-    font: -apple-system-headline;
-    font-weight: 300;
+  .intro {
+    h2 {
+      @include scut-margin(32px n 0);
+      @include scut-rem-fallback(28);
+      color: $brand-primary;
+      font: -apple-system-headline;
+      font-weight: 300;
+      @include breakpoint($screen-sm-min) {
+        @include scut-margin(0);
+      }
+      @include breakpoint($screen-md-min) {
+        @include scut-rem-fallback(24);
+      }
+    }
+    p {
+      @include scut-margin(n 32px 32px);
+      @include scut-rem-fallback(18);
+      color: $brand-primary;
+      @include breakpoint($screen-sm-min) {
+        @include scut-margin(n 16px);
+      }
+    }
     @include breakpoint($screen-sm-min) {
-      @include scut-margin(0);
       left: 32px;
       position: relative;
       text-align: left;
       top: 64px;
-    }
-    @include breakpoint($screen-md-min) {
-      @include scut-rem-fallback(24);
+      width: 50%;
     }
   }
   img {
@@ -287,10 +300,11 @@ body {
 // Pages
 
 .page-content {
-  @include scut-padding(32px 48px 48px);
+  @include scut-padding(16px 24px 32px);
   background-color: white;
   h1 {
     @include scut-rem-fallback(28);
+    @include scut-margin(n n 32px n);
     color: $brand-primary;
     line-height: 48px;
     .icon {
@@ -305,9 +319,9 @@ body {
     @include scut-margin(32px n);
   }
   figure {
-    @include scut-margin(n 16px 16px n);
+    @include scut-margin(n n 16px n);
     float: left;
-    width: 33%;
+    width: 100%;
     img {
       @include scut-margin(n 16px n n);
       float: left;
@@ -315,6 +329,13 @@ body {
     .desc {
       float: left;
     }
+    @include breakpoint($screen-sm-min) {
+      @include scut-margin(n 16px 16px n);
+      width: 33%;
+    }
+  }
+  @include breakpoint($screen-sm-min) {
+    @include scut-padding(32px 48px 48px);
   }
 }
 
