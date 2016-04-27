@@ -40,7 +40,11 @@
           %li
             = link_to "http://www.instagram.com/hashsapp", class: "soc3" do
               = sprockets.find_asset("instagram_icon.svg").to_s
-        %p &copy; 2016 Hashs
+        %p
+          &copy; 2016 Hashs.
+          %a.iubenda-white.iub-legal-only.iubenda-embed{:href => "//www.iubenda.com/privacy-policy/7839173", :title => "Privacy Policy"} Privacy Policy
+          :javascript
+            (function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);
 
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
     :javascript

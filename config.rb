@@ -1,3 +1,6 @@
+activate :livereload
+activate :directory_indexes
+
 ###
 # Compass
 ###
