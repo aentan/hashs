@@ -85,6 +85,10 @@ body {
   overflow: hidden;
 }
 
+.clearfix {
+  @include scut-clearfix;
+}
+
 
 // Index
 
@@ -294,6 +298,21 @@ body {
       @include scut-size(48px 48px);
       background: image-url("hashs_icon.svg") no-repeat 50% 50%;
       display: block;
+      float: left;
+    }
+  }
+  .people {
+    @include scut-margin(32px n);
+  }
+  figure {
+    @include scut-margin(n 16px 16px n);
+    float: left;
+    width: 33%;
+    img {
+      @include scut-margin(n 16px n n);
+      float: left;
+    }
+    .desc {
       float: left;
     }
   }
