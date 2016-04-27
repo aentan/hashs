@@ -68,7 +68,6 @@ body {
     width: $screen-sm-min;
   }
   @include breakpoint($screen-lg-min) {
-    @include scut-center-transform;
     width: $screen-md-min;
   }
 }

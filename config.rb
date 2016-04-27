@@ -16,6 +16,12 @@ end
 
 activate :scut
 
+###
+# Open Graph
+###
+
+# todo
+
 # Change Compass configuration
 # compass_config do |config|
 #   config.output_style = :compact
