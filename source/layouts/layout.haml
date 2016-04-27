@@ -30,9 +30,15 @@
 
       %footer
         %ul
-          %li= link_to "Facebook", "http://www.facebook.com/hashsapp", class: "soc1"
-          %li= link_to "Twitter", "https://twitter.com/hashsapp", class: "soc2"
-          %li= link_to "Instagram", "http://www.instagram.com/hashsapp", class: "soc3"
+          %li
+            = link_to "http://www.facebook.com/hashsapp", class: "soc1" do
+              = sprockets.find_asset("facebook_icon.svg").to_s
+          %li
+            = link_to "https://twitter.com/hashsapp", class: "soc2" do
+              = sprockets.find_asset("twitter_icon.svg").to_s
+          %li
+            = link_to "http://www.instagram.com/hashsapp", class: "soc3" do
+              = sprockets.find_asset("instagram_icon.svg").to_s
         %p &copy; 2016 Hashs
 
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"

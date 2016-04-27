@@ -303,14 +303,23 @@ footer {
 
 [class^="soc"] {
   @include scut-rem-fallback(14);
-  @include scut-image-replace;
   @include scut-margin(0 12px);
   @include scut-size(24px 24px);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
   display: block;
+  svg {
+    vertical-align: middle;
+    path {
+      fill: #000000;
+      opacity: 0.23;
+    }
+  }
+  &:hover {
+    svg path {
+      opacity: 1;
+    }
+  }
 }
 
-.soc1 { background-image: image-url("facebook_icon.svg"); }
-.soc2 { background-image: image-url("twitter_icon.svg"); }
-.soc3 { background-image: image-url("instagram_icon.svg"); }
+.soc1:hover svg path { fill: #3b5998; }
+.soc2:hover svg path { fill: #55acee; }
+.soc3:hover svg path { fill: #3f729b; }
