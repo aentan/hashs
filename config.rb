@@ -1,5 +1,6 @@
 activate :livereload
 activate :directory_indexes
+activate :asset_hash
 
 ###
 # Compass
@@ -71,6 +72,10 @@ activate :scut
 # Helpers
 ###
 
+set :protocol, "http://"
+set :host, "hashsapp.com"
+set :port, 80
+
 # Methods defined in the helpers block are available in templates
 helpers do
   # Calculate the years for a copyright
@@ -94,6 +99,16 @@ helpers do
     img << "\" width=\"#{opts[:width]}\" height=\"#{opts[:height]}\">"
 
     img
+  end
+
+  def host_with_port
+    [host, optional_port].compact.join(':')
+  end
+  def optional_port
+    port unless port.to_i == 80
+  end
+  def image_url(source)
+    protocol + host_with_port + image_path(source)
   end
 
 end

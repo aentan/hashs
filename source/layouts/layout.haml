@@ -15,6 +15,14 @@
     %meta{name: "description", content: current_page.data.desc}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
 
+    %meta{property: "og:title", content: current_page.data.title}
+    %meta{property: "og:description", content: current_page.data.desc}
+    %meta{property: "og:site_name", content: "Hashs"}
+    %meta{property: "og:type", content: "website"}
+    %meta{property: "og:image", content: image_url("hashs_og_image.png")}
+    %meta{property: "og:image:width", content: "1200"}
+    %meta{property: "og:image:height", content: "630"}
+
     %link{rel: "icon", href: "/favicon.ico", type: "image/x-icon"}
 
     = stylesheet_link_tag "style"
