@@ -1,6 +1,5 @@
 activate :livereload
 activate :directory_indexes
-activate :asset_hash
 
 ###
 # Compass
@@ -146,6 +145,8 @@ configure :build do
 
   # Use relative URLs
   activate :relative_assets
+
+  set :host, "hashsapp.com/"
 
   # Compress PNGs after build
   # First: gem install middleman-smusher

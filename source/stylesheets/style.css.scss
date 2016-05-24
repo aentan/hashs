@@ -311,6 +311,7 @@ body {
       @include scut-margin(n 16px n n);
       @include scut-size(48px 48px);
       background: image-url("hashs_icon.svg") no-repeat 50% 50%;
+      background-size: contain;
       display: block;
       float: left;
     }
