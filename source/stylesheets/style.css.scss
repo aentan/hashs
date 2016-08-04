@@ -216,11 +216,21 @@ body {
 .get {
   @include scut-clearfix;
   .apple {
-    background: $brand-secondary image-url("apple_icon.svg") no-repeat 50% 50%;
+    background: $brand-secondary image-url("download_badge.svg") no-repeat 50% 50%;
+    background-size: 192px;
     display: block;
     float: left;
-    width: 33.33%;
+    position: relative;
+    width: 100%;
     @include breakpoint($screen-sm-min) {
+      background-size: 160px;
+    }
+    a {
+      @include scut-image-replace;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
       width: 100%;
     }
   }
@@ -228,12 +238,12 @@ body {
     @include scut-rem-fallback(18);
     background-color: $brand-secondary;
     color: white;
+    display: none;
     float: left;
     font: -apple-system-headline;
     font-weight: 200;
     position: relative;
     text-align: center;
-    width: 66.67%;
     span {
       @include scut-center-transform;
       @include scut-padding(0 32px);
@@ -247,6 +257,7 @@ body {
       }
     }
     @include breakpoint($screen-sm-min) {
+      display: block;
       width: 100%;
     }
   }
