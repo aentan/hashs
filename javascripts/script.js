@@ -1,0 +1,1 @@
+$(function(){$("#subForm").submit(function(t){t.preventDefault(),$.getJSON(this.action+"?callback=?",$(this).serialize(),function(t){400===t.Status?alert("Error: "+t.Message):alert("Success: "+t.Message)})})});
